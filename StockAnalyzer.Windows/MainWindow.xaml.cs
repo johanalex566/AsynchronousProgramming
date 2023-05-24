@@ -3,6 +3,7 @@ using StockAnalyzer.Core.Domain;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net;
+using System.Net.Http;
 using System.Threading;
 using System.Windows;
 using System.Windows.Navigation;
@@ -19,22 +20,22 @@ public partial class MainWindow : Window
         InitializeComponent();
     }
 
-
-
-    private void Search_Click(object sender, RoutedEventArgs e)
+    private async void Search_Click(object sender, RoutedEventArgs e)
     {
         BeforeLoadingStockData();
 
-        var client = new WebClient();
+        using (var client= new HttpClient())
+        {
+            var responseTask = client.GetAsync($"{API_URL}/{StockIdentifier.Text}");
 
-        var content = client.DownloadString($"{API_URL}/{StockIdentifier.Text}");
+            var response = await responseTask;
 
-        // Simulate that the web call takes a very long time
-        Thread.Sleep(10000);
+            var content = await response.Content.ReadAsStringAsync();
 
-        var data = JsonConvert.DeserializeObject<IEnumerable<StockPrice>>(content);
+            var data = JsonConvert.DeserializeObject<IEnumerable<StockPrice>>(content);
 
-        Stocks.ItemsSource = data;
+            Stocks.ItemsSource = data;
+        }
 
         AfterLoadingStockData();
     }
