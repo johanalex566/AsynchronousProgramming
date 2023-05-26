@@ -8,3 +8,27 @@ by Filip Ekberg Asynchronous Programming
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/29d6ffec-e12e-42e1-af07-ff9d438d5986)
 
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/66965f54-4ff5-4cb0-97e2-d485d5e53c74)
+
+**Await keyword**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/231b7ebb-3571-4c18-ab7d-2f2c0ad08489)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/33222081-1b82-4384-b7c2-6e60e49b043a)
+
+**Async avoid**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/e1c9997d-edfc-4b0d-9859-636579ee48de)
+Therefore
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/82332df4-ac0a-4bf3-8285-dde0a9cfd5c3)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/8e9d7c8d-e030-4309-9319-45acabcdf4b9)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/ee76f344-da29-4f7b-bb23-2b668a3c3ca9)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/612b32f9-107d-46f5-8767-df46e9dcc514)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/63711763-df7c-4e3d-97ae-3e748e66e9b2)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/ec2a1ab0-5319-456c-8c7b-0cbdc6eb09f1)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/e9b045f9-2bb7-44e9-a0e9-4050d68346a2)
