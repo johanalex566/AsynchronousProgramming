@@ -30,3 +30,5 @@ Therefore
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/63711763-df7c-4e3d-97ae-3e748e66e9b2)
 
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/ec2a1ab0-5319-456c-8c7b-0cbdc6eb09f1)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/e9b045f9-2bb7-44e9-a0e9-4050d68346a2)
