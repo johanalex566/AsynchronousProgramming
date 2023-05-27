@@ -32,3 +32,13 @@ Therefore
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/ec2a1ab0-5319-456c-8c7b-0cbdc6eb09f1)
 
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/e9b045f9-2bb7-44e9-a0e9-4050d68346a2)
+
+** TPL: Task Parallel Library**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/03d11704-b07c-4153-891f-4b6c2df215ca)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/0b43482a-79a9-49b8-8bfe-de8fea30c532)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/80a11ea4-a29f-4112-9a18-03e793671e6c)
+
+
