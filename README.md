@@ -41,4 +41,8 @@ Therefore
 
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/80a11ea4-a29f-4112-9a18-03e793671e6c)
 
+**Handle exception and control inside operation**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/c652f51a-2d34-4f79-a1de-2c2a63cd6e7a)
+
 
