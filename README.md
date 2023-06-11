@@ -45,4 +45,13 @@ Therefore
 
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/c652f51a-2d34-4f79-a1de-2c2a63cd6e7a)
 
+**Cancellation**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/a97359b2-4eba-4fb9-98b2-81bb602ee358)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/e59b74aa-85ee-4bf9-bce9-99cec99c24da)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/8e722c91-e48c-4b1a-9ac6-d8c41f0a683b)
+
+
 
