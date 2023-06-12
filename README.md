@@ -32,3 +32,26 @@ Therefore
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/ec2a1ab0-5319-456c-8c7b-0cbdc6eb09f1)
 
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/e9b045f9-2bb7-44e9-a0e9-4050d68346a2)
+
+** TPL: Task Parallel Library**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/03d11704-b07c-4153-891f-4b6c2df215ca)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/0b43482a-79a9-49b8-8bfe-de8fea30c532)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/80a11ea4-a29f-4112-9a18-03e793671e6c)
+
+**Handle exception and control inside operation**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/c652f51a-2d34-4f79-a1de-2c2a63cd6e7a)
+
+**Cancellation**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/a97359b2-4eba-4fb9-98b2-81bb602ee358)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/e59b74aa-85ee-4bf9-bce9-99cec99c24da)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/8e722c91-e48c-4b1a-9ac6-d8c41f0a683b)
+
+
+
