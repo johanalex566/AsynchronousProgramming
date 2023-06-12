@@ -4,12 +4,15 @@ using StockAnalyzer.Core.Domain;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace StockAnalyzer.Windows;
 
@@ -23,13 +26,81 @@ public partial class MainWindow : Window
         InitializeComponent();
     }
 
-    private async void Search_Click(object sender, RoutedEventArgs e)
+    CancellationTokenSource? cancellationTokenSource;
+
+    private void Search_Click(object sender, RoutedEventArgs e)
     {
+
+        if (cancellationTokenSource is not null)
+        {
+            //Already hace an instance of the cancellation token source?
+            //This means the button has already been pressed!
+            cancellationTokenSource.Cancel();
+            cancellationTokenSource.Dispose();
+            cancellationTokenSource = null;
+
+            Search.Content = "Search";
+            return;
+        }
+
         try
         {
-            BeforeLoadingStockData();
+            cancellationTokenSource = new();
 
-            await GetStocks();
+            Search.Content = "Cancel";
+
+            BeforeLoadingStockData();
+            Task<string[]> loadLinesTask = SearchForStocks(cancellationTokenSource.Token);
+
+            loadLinesTask.ContinueWith(t =>
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    Notes.Text = t.Exception?.InnerException?.Message;
+                });
+
+
+            }, TaskContinuationOptions.OnlyOnFaulted);
+
+            var processStockTask =
+            loadLinesTask.ContinueWith((completedTask) =>
+            {
+
+                var lines = completedTask.Result;
+
+                var data = new List<StockPrice>();
+
+                foreach (var line in lines.Skip(1))
+                {
+                    if (cancellationTokenSource.Token.IsCancellationRequested)
+                    {
+                        break;
+                    }
+
+                    var price = StockPrice.FromCSV(line);
+
+                    data.Add(price);
+                }
+
+                Dispatcher.Invoke(() =>
+                {
+                    Stocks.ItemsSource = data.Where(sp => sp.Identifier == StockIdentifier.Text);
+                });
+            }, TaskContinuationOptions.OnlyOnRanToCompletion
+            );
+
+            processStockTask.ContinueWith(_ =>
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    AfterLoadingStockData();
+
+                    cancellationTokenSource?.Dispose();
+                    cancellationTokenSource = null;
+                    Search.Content = "Search";
+                });
+            });
+
         }
         catch (Exception ex)
         {
@@ -37,8 +108,20 @@ public partial class MainWindow : Window
         }
         finally
         {
-            AfterLoadingStockData();
+
         }
+    }
+
+    private static Task<string[]> SearchForStocks(CancellationToken cancellationToken)
+    {
+   
+
+        return Task.Run(() =>
+        {
+            var lines = File.ReadAllLines(@"StockPrices_Small.csv");
+
+            return lines;
+        }, cancellationToken);
     }
 
     private async Task GetStocks()
