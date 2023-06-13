@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using StockAnalyzer.Core;
 using StockAnalyzer.Core.Domain;
+using StockAnalyzer.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -28,7 +29,7 @@ public partial class MainWindow : Window
 
     CancellationTokenSource? cancellationTokenSource;
 
-    private void Search_Click(object sender, RoutedEventArgs e)
+    private async void Search_Click(object sender, RoutedEventArgs e)
     {
 
         if (cancellationTokenSource is not null)
@@ -50,57 +51,13 @@ public partial class MainWindow : Window
             Search.Content = "Cancel";
 
             BeforeLoadingStockData();
-            Task<string[]> loadLinesTask = SearchForStocks(cancellationTokenSource.Token);
 
-            loadLinesTask.ContinueWith(t =>
-            {
-                Dispatcher.Invoke(() =>
-                {
-                    Notes.Text = t.Exception?.InnerException?.Message;
-                });
+            var service = new StockService();
 
+            var data = await service.GetStockPricesFor(StockIdentifier.Text, cancellationTokenSource.Token);
 
-            }, TaskContinuationOptions.OnlyOnFaulted);
-
-            var processStockTask =
-            loadLinesTask.ContinueWith((completedTask) =>
-            {
-
-                var lines = completedTask.Result;
-
-                var data = new List<StockPrice>();
-
-                foreach (var line in lines.Skip(1))
-                {
-                    if (cancellationTokenSource.Token.IsCancellationRequested)
-                    {
-                        break;
-                    }
-
-                    var price = StockPrice.FromCSV(line);
-
-                    data.Add(price);
-                }
-
-                Dispatcher.Invoke(() =>
-                {
-                    Stocks.ItemsSource = data.Where(sp => sp.Identifier == StockIdentifier.Text);
-                });
-            }, TaskContinuationOptions.OnlyOnRanToCompletion
-            );
-
-            processStockTask.ContinueWith(_ =>
-            {
-                Dispatcher.Invoke(() =>
-                {
-                    AfterLoadingStockData();
-
-                    cancellationTokenSource?.Dispose();
-                    cancellationTokenSource = null;
-                    Search.Content = "Search";
-                });
-            });
-
+            Stocks.ItemsSource = data;
+          
         }
         catch (Exception ex)
         {
@@ -108,7 +65,10 @@ public partial class MainWindow : Window
         }
         finally
         {
-
+            AfterLoadingStockData();
+            cancellationTokenSource?.Dispose();
+            cancellationTokenSource = null;
+            Search.Content = "Search";
         }
     }
 
