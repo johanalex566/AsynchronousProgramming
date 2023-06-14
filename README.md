@@ -53,5 +53,12 @@ Therefore
 
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/8e722c91-e48c-4b1a-9ac6-d8c41f0a683b)
 
+**Process task as they complete**
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/77973a86-e4a4-40ba-9e06-b91a1f34332f)
+
+**Use "ConcurrentBag"**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/a92d7efd-4c47-45ab-9844-c7e9537dff51)
+
 
 
