@@ -60,5 +60,7 @@ Therefore
 
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/a92d7efd-4c47-45ab-9844-c7e9537dff51)
 
+**Asynchronous stream and disposable**
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/2fc8aaa4-fe02-441a-8e8f-df3c6391f8a4)
 
 
