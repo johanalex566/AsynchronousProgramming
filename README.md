@@ -67,5 +67,10 @@ Therefore
 
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/db8c5349-4599-433d-8498-0d89b11c6cb2)
 
+**Reducing of complexity**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/f8602ef9-ee3d-450c-a5da-3cb75b049e41)
+
+
 
 
