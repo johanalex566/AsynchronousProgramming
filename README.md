@@ -63,4 +63,9 @@ Therefore
 **Asynchronous stream and disposable**
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/2fc8aaa4-fe02-441a-8e8f-df3c6391f8a4)
 
+**From behind of async and await from compiler**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/db8c5349-4599-433d-8498-0d89b11c6cb2)
+
+
 
