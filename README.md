@@ -77,4 +77,8 @@ Therefore
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/2cbafcd1-82f8-4b2e-a64f-f4929e92b8e4)
 
 
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/897ccb50-cd2e-4cd6-847c-5951e793ab50)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/b4165213-fee4-4dfa-907a-0400da1e4f66)
+
 
