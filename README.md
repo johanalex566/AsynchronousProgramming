@@ -72,6 +72,9 @@ Therefore
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/adece3db-a407-455e-85a4-941de4c07855)
 
 
+**Deadloking**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/2cbafcd1-82f8-4b2e-a64f-f4929e92b8e4)
 
 
 
