@@ -63,4 +63,22 @@ Therefore
 **Asynchronous stream and disposable**
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/2fc8aaa4-fe02-441a-8e8f-df3c6391f8a4)
 
+**From behind of async and await from compiler**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/db8c5349-4599-433d-8498-0d89b11c6cb2)
+
+**Reducing of complexity**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/adece3db-a407-455e-85a4-941de4c07855)
+
+
+**Deadloking**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/2cbafcd1-82f8-4b2e-a64f-f4929e92b8e4)
+
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/897ccb50-cd2e-4cd6-847c-5951e793ab50)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/b4165213-fee4-4dfa-907a-0400da1e4f66)
+
 
