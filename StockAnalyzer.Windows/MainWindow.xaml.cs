@@ -30,28 +30,18 @@ public partial class MainWindow : Window
 
     private async void Search_Click(object sender, RoutedEventArgs e)
     {
-
         try
         {
             BeforeLoadingStockData();
-
-            var identifier = StockIdentifier.Text.Split(' ', ',');
-
-            var data = new ObservableCollection<StockPrice>();
-
-            Stocks.ItemsSource = data;
-
-            var service = new StockDiskStreamService();
-
-            var enumerator =  service.GetAllStockPrices();
-
-            await foreach (var price in enumerator.WithCancellation(CancellationToken.None))
+            var progress = new Progress<IEnumerable<StockPrice>>();
+            progress.ProgressChanged += (_, stocks) =>
             {
-                if (identifier.Contains(price.Identifier))
-                {
-                    data.Add(price);
-                }
-            }
+                StockProgress.Value += 1;
+                Notes.Text += $"Loaded {stocks.Count()} for {stocks.First().Identifier}{Environment.NewLine}";
+
+            };
+
+            await SearchForStocks(progress);
 
         }
         catch (Exception ex)
@@ -65,40 +55,37 @@ public partial class MainWindow : Window
 
     }
 
-    private static Task<string[]> SearchForStocks(CancellationToken cancellationToken)
+    private async Task SearchForStocks(IProgress<IEnumerable<StockPrice>> progress)
     {
+        var service = new StockService();
+        var loadingTask = new List<Task<IEnumerable<StockPrice>>>();
 
-
-        return Task.Run(() =>
+        foreach (var identifier in StockIdentifier.Text.Split(' ', ','))
         {
-            var lines = File.ReadAllLines(@"StockPrices_Small.csv");
+            var loadTask = service.GetStockPricesFor(identifier, CancellationToken.None);
 
-            return lines;
-        }, cancellationToken);
-    }
+            loadTask = loadTask.ContinueWith(completedTask =>
+            {
+                progress?.Report(completedTask.Result);
+                return completedTask.Result;
+            });
 
-    private async Task GetStocks()
-    {
-        try
-        {
-            var store = new DataStore();
-
-            var responseTask = store.GetStockPrices(StockIdentifier.Text);
-
-            Stocks.ItemsSource = await responseTask;
+            loadingTask.Add(loadTask);
         }
-        catch (Exception ex)
-        {
-            Notes.Text = ex.Message;
-        }
-    }
 
+        var data = await Task.WhenAll(loadingTask);
+
+        Stocks.ItemsSource = data.SelectMany(stock => stock);
+
+    }
 
     private void BeforeLoadingStockData()
     {
         stopwatch.Restart();
         StockProgress.Visibility = Visibility.Visible;
-        StockProgress.IsIndeterminate = true;
+        StockProgress.IsIndeterminate = false;
+        StockProgress.Value = 0;
+        StockProgress.Maximum = StockIdentifier.Text.Split(' ', ',').Length;
     }
 
     private void AfterLoadingStockData()
