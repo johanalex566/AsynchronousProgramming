@@ -81,4 +81,21 @@ Therefore
 
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/b4165213-fee4-4dfa-907a-0400da1e4f66)
 
+**Child task (Task factory)**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/fffeb52a-c869-4a37-8ead-728b8f3cc68e)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/3ebbb795-f57e-4e28-b2e5-9722b55126b5)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/8e0ef4ca-7d88-4926-94ec-920242425a4c)
+
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/e732b257-49d9-41e1-90ab-ce01f076ef3c)
+
+**Parallel Programming and Multithreading in c#**
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/71ad4712-a9cc-4096-a240-0ee3b59932a2)
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/27f3c6d1-6993-4161-98da-806c5619aaaa)
+
+
+
 
