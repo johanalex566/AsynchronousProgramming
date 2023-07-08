@@ -5,6 +5,11 @@ by Filip Ekberg Asynchronous Programming
 
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/f24420cf-ab36-423e-ae13-53f05b8ee2f2)
 
+We Need a way to communicate with the UI thread while still allowing for the majority of the heavy work to run on a separate thread.
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/3d95fb19-53f1-4f21-8834-2420fd7912cb)
+
+
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/29d6ffec-e12e-42e1-af07-ff9d438d5986)
 
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/66965f54-4ff5-4cb0-97e2-d485d5e53c74)
