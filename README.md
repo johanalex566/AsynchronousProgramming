@@ -95,6 +95,8 @@ Therefore
 **Parallel Programming and Multithreading in c#**
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/71ad4712-a9cc-4096-a240-0ee3b59932a2)
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/27f3c6d1-6993-4161-98da-806c5619aaaa)
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/6c918f29-56d4-4931-8bbc-e395defce5b0)
+
 
 
 
