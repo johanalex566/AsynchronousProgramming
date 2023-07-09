@@ -106,6 +106,8 @@ Therefore
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/27f3c6d1-6993-4161-98da-806c5619aaaa)
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/6c918f29-56d4-4931-8bbc-e395defce5b0)
 
+**Parallel.Invoke()
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/30e02b37-042e-4f4b-8db3-70fa7c2b5362)
 
 
 
