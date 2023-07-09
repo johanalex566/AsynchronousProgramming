@@ -109,6 +109,17 @@ Therefore
 **Parallel.Invoke()
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/30e02b37-042e-4f4b-8db3-70fa7c2b5362)
 
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/0e7cfc4a-e5fc-407a-924f-868c020a9b37)
+
+**Change the maximum number of concurrent tasks with parallelOptions.**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/4ad20fc5-e817-4a7d-ad65-559bfe9819ed)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/3501a7df-4910-4e75-94d4-7f6b17d8ac55)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/17b56eb5-d007-4677-9f3c-634435393a9f)
+
+
 
 
 
