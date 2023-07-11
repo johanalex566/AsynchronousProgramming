@@ -119,6 +119,9 @@ Therefore
 
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/17b56eb5-d007-4677-9f3c-634435393a9f)
 
+**Using parallel and Asynchronous**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/a6c9e93e-9b93-4e6d-8012-643e0cd74ece)
 
 
 
