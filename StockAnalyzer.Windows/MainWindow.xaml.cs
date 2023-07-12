@@ -48,8 +48,9 @@ public partial class MainWindow : Window
             {
                 Parallel.ForEach(stocks,
                     new ParallelOptions { MaxDegreeOfParallelism = 4 },
-                    (elements) =>
+                    (elements, state) =>
                     {
+                        state.Break();
                         var result = Calculate(elements.Value);
                         bag.Add(result);
                     });
