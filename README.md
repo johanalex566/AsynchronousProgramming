@@ -133,6 +133,9 @@ Therefore
 
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/6088adec-09cc-4616-99c6-f57dac39f845)
 
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/2bc28eda-3a1d-40ca-b9c5-4a1994f724ee)
+
+
 
 
 
