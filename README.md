@@ -125,6 +125,12 @@ Therefore
 
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/a6c9e93e-9b93-4e6d-8012-643e0cd74ece)
 
+**Working with shared variables in parallel foreach**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/3c5f9bad-c784-4740-8df3-e69dcbdcf8e8)
+
+
+
 
 
 
