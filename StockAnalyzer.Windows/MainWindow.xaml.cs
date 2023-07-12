@@ -46,10 +46,13 @@ public partial class MainWindow : Window
         {
             try
             {
-                Parallel.ForEach(stocks, (elements) => {
-                    var result = Calculate(elements.Value);
-                    bag.Add(result);
-                });
+                Parallel.ForEach(stocks,
+                    new ParallelOptions { MaxDegreeOfParallelism = 4 },
+                    (elements) =>
+                    {
+                        var result = Calculate(elements.Value);
+                        bag.Add(result);
+                    });
             }
             catch (Exception ex)
             {
