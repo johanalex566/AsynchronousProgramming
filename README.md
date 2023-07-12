@@ -5,6 +5,15 @@ by Filip Ekberg Asynchronous Programming
 
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/f24420cf-ab36-423e-ae13-53f05b8ee2f2)
 
+**Task and Dispacher**
+
+We Need a way to communicate with the UI thread while still allowing for the majority of the heavy work to run on a separate thread.
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/3d95fb19-53f1-4f21-8834-2420fd7912cb)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/d7bdeee9-6d32-4841-a16c-05c229eacc40)
+
+
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/29d6ffec-e12e-42e1-af07-ff9d438d5986)
 
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/66965f54-4ff5-4cb0-97e2-d485d5e53c74)
@@ -80,5 +89,40 @@ Therefore
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/897ccb50-cd2e-4cd6-847c-5951e793ab50)
 
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/b4165213-fee4-4dfa-907a-0400da1e4f66)
+
+**Child task (Task factory)**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/fffeb52a-c869-4a37-8ead-728b8f3cc68e)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/3ebbb795-f57e-4e28-b2e5-9722b55126b5)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/8e0ef4ca-7d88-4926-94ec-920242425a4c)
+
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/e732b257-49d9-41e1-90ab-ce01f076ef3c)
+
+**Parallel Programming and Multithreading in c#**
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/71ad4712-a9cc-4096-a240-0ee3b59932a2)
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/27f3c6d1-6993-4161-98da-806c5619aaaa)
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/6c918f29-56d4-4931-8bbc-e395defce5b0)
+
+**Parallel.Invoke()
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/30e02b37-042e-4f4b-8db3-70fa7c2b5362)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/0e7cfc4a-e5fc-407a-924f-868c020a9b37)
+
+**Change the maximum number of concurrent tasks with parallelOptions.**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/4ad20fc5-e817-4a7d-ad65-559bfe9819ed)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/3501a7df-4910-4e75-94d4-7f6b17d8ac55)
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/17b56eb5-d007-4677-9f3c-634435393a9f)
+
+**Using parallel and Asynchronous**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/a6c9e93e-9b93-4e6d-8012-643e0cd74ece)
+
+
 
 
