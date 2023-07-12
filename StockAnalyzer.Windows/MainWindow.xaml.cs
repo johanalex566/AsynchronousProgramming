@@ -1,11 +1,7 @@
-﻿using StockAnalyzer.Core;
-using StockAnalyzer.Core.Domain;
-using StockAnalyzer.Core.Services;
-using StockAnalyzer.Windows.Services;
+﻿using StockAnalyzer.Core.Domain;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -13,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Navigation;
+using static StockAnalyzer.Core.Domain.StockPrice;
 
 namespace StockAnalyzer.Windows;
 
@@ -20,6 +17,7 @@ public partial class MainWindow : Window
 {
     private static string API_URL = "https://ps-async.fekberg.com/api/stocks";
     private Stopwatch stopwatch = new Stopwatch();
+    private Random random = new Random();
 
     public MainWindow()
     {
@@ -30,54 +28,108 @@ public partial class MainWindow : Window
 
     private async void Search_Click(object sender, RoutedEventArgs e)
     {
-        try
-        {
-            BeforeLoadingStockData();
-            var progress = new Progress<IEnumerable<StockPrice>>();
-            progress.ProgressChanged += (_, stocks) =>
-            {
-                StockProgress.Value += 1;
-                Notes.Text += $"Loaded {stocks.Count()} for {stocks.First().Identifier}{Environment.NewLine}";
+        BeforeLoadingStockData();
 
+        var stocks = new Dictionary<string, IEnumerable<StockPrice>>
+            {
+                { "MSFT", Generate("MSFT") },
+                { "GOOGL", Generate("GOOGL") },
+                { "AAPL", Generate("AAPL") },
+                { "CAT", Generate("CAT") },
+                { "ABC", Generate("ABC") },
+                { "DEF", Generate("DEF") }
             };
 
-            await SearchForStocks(progress);
+        var bag = new ConcurrentBag<StockCalculation>();
 
-        }
-        catch (Exception ex)
+        await Task.Run(() =>
         {
-            Notes.Text = ex.Message;
-        }
-        finally
-        {
-            AfterLoadingStockData();
-        }
-
-    }
-
-    private async Task SearchForStocks(IProgress<IEnumerable<StockPrice>> progress)
-    {
-        var service = new StockService();
-        var loadingTask = new List<Task<IEnumerable<StockPrice>>>();
-
-        foreach (var identifier in StockIdentifier.Text.Split(' ', ','))
-        {
-            var loadTask = service.GetStockPricesFor(identifier, CancellationToken.None);
-
-            loadTask = loadTask.ContinueWith(completedTask =>
+            Parallel.Invoke(
+            () =>
             {
-                progress?.Report(completedTask.Result);
-                return completedTask.Result;
+                var msft = Calculate(stocks["MSFT"]);
+                bag.Add(msft);
+            },
+            () =>
+            {
+                var googl = Calculate(stocks["GOOGL"]);
+                bag.Add(googl);
+            },
+            () =>
+            {
+                var aapl = Calculate(stocks["AAPL"]);
+                bag.Add(aapl);
+            },
+            () =>
+            {
+                var cat = Calculate(stocks["CAT"]);
+                bag.Add(cat);
             });
+        });
 
-            loadingTask.Add(loadTask);
-        }
-
-        var data = await Task.WhenAll(loadingTask);
-
-        Stocks.ItemsSource = data.SelectMany(stock => stock);
+        Stocks.ItemsSource = bag;
 
     }
+
+    private StockCalculation Calculate(IEnumerable<StockPrice> prices)
+    {
+        #region Start stopwatch
+        var calculation = new StockCalculation();
+        var watch = new Stopwatch();
+        watch.Start();
+        #endregion
+
+        var end = DateTime.UtcNow.AddSeconds(4);
+
+        // Spin a loop for a few seconds to simulate load
+        while (DateTime.UtcNow < end)
+        { }
+
+        #region Return a result
+        calculation.Identifier = prices.First().Identifier;
+        calculation.Result = prices.Average(s => s.Open);
+
+        watch.Stop();
+
+        calculation.TotalSeconds = watch.Elapsed.Seconds;
+
+        return calculation;
+        #endregion
+    }
+
+    private Task<IEnumerable<StockPrice>> SearchForStocks()
+    {
+        var tcs = new TaskCompletionSource<IEnumerable<StockPrice>>();
+
+        ThreadPool.QueueUserWorkItem(_ =>
+        {
+            var lines = File.ReadAllLines("StockPrices_small.csv");
+            var prices = new List<StockPrice>();
+
+            foreach (var line in lines.Skip(1))
+            {
+                prices.Add(StockPrice.FromCSV(line));
+
+            }
+
+            tcs.SetResult(prices);
+        });
+
+        return tcs.Task;
+
+    }
+
+    private IEnumerable<StockPrice> Generate(string stockIdentifier)
+    {
+        return Enumerable.Range(1, random.Next(10, 250))
+            .Select(x => new StockPrice
+            {
+                Identifier = stockIdentifier,
+                Open = random.Next(10, 1024)
+            });
+    }
+
+
 
     private void BeforeLoadingStockData()
     {
