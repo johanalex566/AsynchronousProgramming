@@ -44,31 +44,20 @@ public partial class MainWindow : Window
 
         await Task.Run(() =>
         {
-            Parallel.Invoke(
-            () =>
+            try
             {
-                var msft = Calculate(stocks["MSFT"]);
-                bag.Add(msft);
-            },
-            () =>
+                Parallel.ForEach(stocks, (elements) => {
+                    var result = Calculate(elements.Value);
+                    bag.Add(result);
+                });
+            }
+            catch (Exception ex)
             {
-                var googl = Calculate(stocks["GOOGL"]);
-                bag.Add(googl);
-            },
-            () =>
-            {
-                var aapl = Calculate(stocks["AAPL"]);
-                bag.Add(aapl);
-            },
-            () =>
-            {
-                var cat = Calculate(stocks["CAT"]);
-                bag.Add(cat);
-            });
+                Notes.Text = ex.Message;
+            }
         });
 
         Stocks.ItemsSource = bag;
-
     }
 
     private StockCalculation Calculate(IEnumerable<StockPrice> prices)
