@@ -129,6 +129,9 @@ Therefore
 
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/3c5f9bad-c784-4740-8df3-e69dcbdcf8e8)
 
+**Use temporal variables**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/6088adec-09cc-4616-99c6-f57dac39f845)
 
 
 
