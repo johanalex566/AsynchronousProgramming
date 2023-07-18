@@ -144,8 +144,15 @@ Interlocked
 
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/2bc28eda-3a1d-40ca-b9c5-4a1994f724ee)
 
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/5f81f58a-e375-4625-9501-e7f59c9851cc)
 
 
+**Debuug**
 
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/adac25a7-9dfa-4c73-b6b2-eb1a913b38c0)
 
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/c57588c8-53fa-44da-ba84-0676896b38ed)
+
+**Cancel parallel operation**
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/5e38a544-6950-4b3b-b904-1bf63d28fec5)
 
