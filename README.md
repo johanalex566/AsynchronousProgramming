@@ -156,3 +156,11 @@ Interlocked
 **Cancel parallel operation**
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/5e38a544-6950-4b3b-b904-1bf63d28fec5)
 
+**ThreadLocal variable**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/0ddcb6f5-39b1-4e14-a46d-37b8e2f4e36b)
+
+**Summary parallel*
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/9113a08e-e945-4dc8-a1f0-f1bbb43c42c8)
+
+
