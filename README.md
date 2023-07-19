@@ -167,4 +167,5 @@ Interlocked
 
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/72487ae9-8bbe-4c4d-a3b4-daeaaa85861c)
 
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/aa8f6d32-7fe6-4c7b-83b5-cfcb779cdc89)
 
