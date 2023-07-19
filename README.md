@@ -163,4 +163,8 @@ Interlocked
 **Summary parallel*
 ![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/9113a08e-e945-4dc8-a1f0-f1bbb43c42c8)
 
+**Using parallel LINQ (PLINQ)**
+
+![image](https://github.com/johanalex566/AsynchronousProgramming/assets/40399697/72487ae9-8bbe-4c4d-a3b4-daeaaa85861c)
+
 
